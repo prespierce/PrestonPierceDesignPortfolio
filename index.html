@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preston Pierce Design Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#" class="logo">Preston Pierce</a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="logo-bubble">
+        <img src="images/personallogo-2.png" alt="Preston Pierce personal logo">
+      </div>
+
+      <h1>Preston Pierce Design Portfolio</h1>
+
+      <p>
+        Graphic design focused on fun and whimsy <3
+      </p>
+
+      <a href="#work" class="button">View My Work</a>
+    </section>
+  </header>
+
+  <main>
+    <section id="work" class="portfolio-section">
+      <h2>Featured Work</h2>
+
+      <div class="slideshow">
+        <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+
+        <div class="slide active">
+          <img src="images/mochite (1).png" alt="Mochité Cosmetics logo">
+          <div class="slide-caption">
+            <h3>Mochité Cosmetics Logo</h3>
+			<p>Logo concept for a Gen-Z-owned, anime-inspired makeup brand</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/billboard.png" alt="Mochité Cosmetics billboard">
+          <div class="slide-caption">
+            <h3>Mochité Billboard</h3>
+			<p>Billboard concept for Mochité Cosmetics</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/anya.png" alt="Digital illustration project">
+          <div class="slide-caption">
+            <h3>Digital Illustration - Anya from "Mouthwashing"</h3>
+			<p>A passion project- a cut-paper style illustration of the character Anya Nusume from the hit video game "Mouthwashing"</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/postcard.png" alt="Nebraska postcard design">
+          <div class="slide-caption">
+            <h3>Nebraska Postcard</h3>
+			<p>A vintage-style postcard with a modern twist. The photos inside the letters were taken entirely by me and my family!</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/bookcover1.png" alt="No Longer Human book cover concept">
+          <div class="slide-caption">
+            <h3>Book Cover Concept 1</h3>
+			<p>A book cover design for No Longer Human by Osamu Dazai. The sakura flowers reflect the fleeting nature of life and identity, mirroring the novel’s themes of mental illness, isolation, and impermanence</p> 
+          </div>
+        </div>
+
+        <div class="slide">
+          <img src="images/bookcover2.png" alt="No Longer Human alternate book cover">
+          <div class="slide-caption">
+            <h3>Book Cover Concept 2</h3>
+			<p>An alternate cover for No Longer Human. This design leans into a surreal, out-of-body feeling- white butterflies represent a disconnect between body and soul, while white chrysanthemums reference death and mourning, reflecting the novel’s darker themes</p>
+          </div>
+        </div>
+
+        <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+      </div>
+
+      <h2 class="gallery-title">More Work</h2>
+
+      <div class="gallery-grid">
+        <article>
+          <img src="images/isometricroom.png" alt="Pastel isometric room">
+          <h3>Isometric Room</h3>
+		  <p>A low-poly isometric room inspired by early computer games made for young girls</p>
+        </article>
+
+        <article>
+          <img src="images/mouthwashadvert.png" alt="Dragonbreath mouthwash advertisement">
+          <h3>Vintage Mouthwash Advert</h3>
+		  <p>A retro advertisement for the fictional mouthwash from "Mouthwashing", drawing from mid-century design and the bold, graphic styling of the game’s ship</p>
+        </article>
+
+        <article>
+          <img src="images/wallpaper.png" alt="Pattern design wallpaper">
+          <h3>Pattern Design</h3>
+		  <p>A repeating pattern inspired by the Great Smoky Mountains National Park, featuring mountains, a black bear, and native flora such as fire pink and bloodroot</p>
+        </article>
+      </div>
+    </section>
+
+<section id="about" class="about-section">
+  <h2>About Me</h2>
+
+  <div class="about-container">
+
+    <div class="polaroid">
+      <img src="images/preston.jpeg" alt="Preston Pierce">
+      <p class="polaroid-caption">Preston :)</p>
+    </div>
+
+    <div class="about-text">
+      <p>
+        Hi, I’m Preston (they/them)! <br>
+		I’m a graphic design student who loves bold lettering,
+        expressive color, pastel palettes, and playful designs with personality. <br>
+		Outside of design, I’m really into K-pop, anime, video games, and D&D.
+        A lot of my work is inspired by the things I love- whether that’s bright,
+        stylized visuals, character-driven design, or a little bit of childlike wonder! <br>
+		I’m especially drawn to projects that let me experiment with color,
+        storytelling, and unique visual identity
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+
+    <a href="mailto:preston.ph.pierce@gmail.com" class="contact-card">
+      preston.ph.pierce@gmail.com
+    </a>
+
+    <a href="tel:+13082522510" class="contact-card">
+      +1 (308) 252-2510
+    </a>
+  
+
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>© 2026 Preston Pierce</p>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove("active"));
+
+      if (index >= slides.length) {
+        currentSlide = 0;
+      } else if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else {
+        currentSlide = index;
+      }
+
+      slides[currentSlide].classList.add("active");
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+  </script>
+
+</body>
+</html>
